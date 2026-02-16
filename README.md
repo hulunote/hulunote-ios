@@ -27,7 +27,7 @@ A native iOS outline editor for [Hulunote](https://www.hulunote.top) — a hiera
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/xlisp/hulunote-ios.git
+git clone https://github.com/hulunote/hulunote-ios.git
 cd hulunote-ios
 ```
 
@@ -52,7 +52,7 @@ The app connects to the Hulunote backend API. By default it points to `https://w
 init(baseURL: URL = URL(string: "http://localhost:6689")!) {
 ```
 
-The backend source is available at [hulunote-rust](https://github.com/xlisp/hulunote-rust).
+The backend source is available at [hulunote-rust](https://github.com/hulunote/hulunote-rust).
 
 ## Architecture
 
