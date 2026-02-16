@@ -2,6 +2,8 @@
 
 A native iOS outline editor for [Hulunote](https://www.hulunote.top) — a hierarchical note-taking application built with SwiftUI.
 
+![](./ios-demo.png)
+
 ## Features
 
 - **Outline Editing** — Create, edit, and organize notes as hierarchical outlines with unlimited nesting depth
