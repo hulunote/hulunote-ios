@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21ED9DBDA60AAA50C1B01224 /* HulunoteTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5A95A8C2A5BE1BAC67EBD /* HulunoteTypography.swift */; };
+		2A5AA2C237D853A5FCDD7C85 /* OutlineEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56835BF34400FD58FB384EF5 /* OutlineEditorView.swift */; };
+		2CC6716218F82CCFB91B0B02 /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD19D002DE6FEE6930A1DC /* NoteListViewModel.swift */; };
+		32ED14514C28E7DBAD529443 /* NavService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8745AA875A94D8921638E42C /* NavService.swift */; };
+		39FFAE0B368A0D8FFBB8716F /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD26AD834F2A9A0DDD3A1D20 /* AppViewModel.swift */; };
+		43083B4558D1EC558F154AF2 /* Nav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F21F3ADCFC3EF88A97267 /* Nav.swift */; };
+		59F774A6138EAEE7A7966ADF /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851FB4694B9ADB2032737AFB /* Auth.swift */; };
+		60AA57D3418D2D1D2F20C296 /* EditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C747756AB793525E0E9FD42 /* EditorToolbar.swift */; };
+		63CBCEA67404EBF1C3F63BE5 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35DB430D9C64E97DFA01B0 /* NoteListView.swift */; };
+		72ACBA1EE1530FC0FB2AB4EB /* HulunoteColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80A1EA45807ABAB6FC6E335 /* HulunoteColors.swift */; };
+		7DA70AABEE4D169B74125E69 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A8E03FFEC039E21012BC69 /* LoginView.swift */; };
+		80E753039814AE4B59BBFF15 /* OutlineBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4086D0D80B736AA2A0EA47 /* OutlineBlockView.swift */; };
+		81810DC358A7E7C885BD46D4 /* DatabaseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE6C40F680DFD2D19D74DF /* DatabaseListView.swift */; };
+		823CD2AFDE3C65A329212FD7 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E1FACCD850E0C1574AC024 /* RootView.swift */; };
+		85CC08180A276F3B2567E078 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06446E53F24990445D90B750 /* AuthService.swift */; };
+		87963757B11FE9CF8980267D /* OutlineEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28374576383B8BE7140E50F2 /* OutlineEditorViewModel.swift */; };
+		8F034438B001F7034EE21D29 /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDAB9281EB061E81541066 /* NoteCardView.swift */; };
+		A153099157DC813EFBA00837 /* OutlineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03943330D3A84FDEE2F3A68A /* OutlineNode.swift */; };
+		A203CC023C548F0D67D63FCE /* HulunoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CFD2EBCF8E5FC72B62887D /* HulunoteApp.swift */; };
+		A5B95EF662438572873D61FF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41489142B83D98633A4852EE /* Note.swift */; };
+		AA95F9E8E73D660C52BDF615 /* GradientStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B398B54D44F188827C588 /* GradientStyles.swift */; };
+		AED762E6683D165211855025 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB451BD1AD9610CE3CEF749 /* Color+Hex.swift */; };
+		C0B202D7D8ECB3327A5E108E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9BDEF20EEF170F0C7E293C /* Database.swift */; };
+		C1975B05F7EABAF7F8C7D43D /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AFD1BCB4E401DED1271DCD /* NoteService.swift */; };
+		C9B38C746CDEBB9D333DB191 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13835C587DF22578FCD007E1 /* APIClient.swift */; };
+		CD833C68EDAA945CAEE88E9A /* DatabaseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1C209A9D837CF922A0B5EF /* DatabaseCardView.swift */; };
+		DA3DB86D9E099BB0B0CC833F /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC261308168E85CDB6D5006C /* DatabaseService.swift */; };
+		DCB2036324444FF131E80BDB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E0D258D06B3ED4E59A836 /* LoginViewModel.swift */; };
+		E0A643E4F8BE7857EDD4E619 /* OutlineTreeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA43C70C80BD3E6423853DC /* OutlineTreeBuilder.swift */; };
+		E84295AB84DDE85812D1256F /* CreateNoteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07176D7A2FF10754E2A5A7A5 /* CreateNoteSheet.swift */; };
+		EAFDECCED017CD50E303471E /* DatabaseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E882D12EC826E9F0AACA59 /* DatabaseListViewModel.swift */; };
+		F7F233F7D6CEBF87E8C2DBE3 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413392ACFB336FF2CC9BDDAD /* KeychainService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		03943330D3A84FDEE2F3A68A /* OutlineNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineNode.swift; sourceTree = "<group>"; };
+		03CFD2EBCF8E5FC72B62887D /* HulunoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HulunoteApp.swift; sourceTree = "<group>"; };
+		06446E53F24990445D90B750 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		07176D7A2FF10754E2A5A7A5 /* CreateNoteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteSheet.swift; sourceTree = "<group>"; };
+		13835C587DF22578FCD007E1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		141A1EFCDFBD031E35C00297 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1C747756AB793525E0E9FD42 /* EditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorToolbar.swift; sourceTree = "<group>"; };
+		1E1C209A9D837CF922A0B5EF /* DatabaseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseCardView.swift; sourceTree = "<group>"; };
+		23AFD1BCB4E401DED1271DCD /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
+		28374576383B8BE7140E50F2 /* OutlineEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineEditorViewModel.swift; sourceTree = "<group>"; };
+		28E882D12EC826E9F0AACA59 /* DatabaseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseListViewModel.swift; sourceTree = "<group>"; };
+		2B4E0D258D06B3ED4E59A836 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2DB451BD1AD9610CE3CEF749 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		2E5B398B54D44F188827C588 /* GradientStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientStyles.swift; sourceTree = "<group>"; };
+		413392ACFB336FF2CC9BDDAD /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		41489142B83D98633A4852EE /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		4D35DB430D9C64E97DFA01B0 /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
+		555F21F3ADCFC3EF88A97267 /* Nav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nav.swift; sourceTree = "<group>"; };
+		56835BF34400FD58FB384EF5 /* OutlineEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineEditorView.swift; sourceTree = "<group>"; };
+		68E1FACCD850E0C1574AC024 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		6CA43C70C80BD3E6423853DC /* OutlineTreeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineTreeBuilder.swift; sourceTree = "<group>"; };
+		6E832E3F966E9D4E8C281A05 /* Hulunote.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Hulunote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75BD19D002DE6FEE6930A1DC /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
+		7A9BDEF20EEF170F0C7E293C /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		7E4086D0D80B736AA2A0EA47 /* OutlineBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineBlockView.swift; sourceTree = "<group>"; };
+		851FB4694B9ADB2032737AFB /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		8745AA875A94D8921638E42C /* NavService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavService.swift; sourceTree = "<group>"; };
+		8CCE6C40F680DFD2D19D74DF /* DatabaseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseListView.swift; sourceTree = "<group>"; };
+		A7CDAB9281EB061E81541066 /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardView.swift; sourceTree = "<group>"; };
+		A80A1EA45807ABAB6FC6E335 /* HulunoteColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HulunoteColors.swift; sourceTree = "<group>"; };
+		BBD5A95A8C2A5BE1BAC67EBD /* HulunoteTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HulunoteTypography.swift; sourceTree = "<group>"; };
+		C5A8E03FFEC039E21012BC69 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CC261308168E85CDB6D5006C /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		FD26AD834F2A9A0DDD3A1D20 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		10A4024AD73B898706076142 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				13835C587DF22578FCD007E1 /* APIClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1C87688AF9CEC7659A142582 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C5A8E03FFEC039E21012BC69 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		433E677631B7970CE7492DB8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FD26AD834F2A9A0DDD3A1D20 /* AppViewModel.swift */,
+				28E882D12EC826E9F0AACA59 /* DatabaseListViewModel.swift */,
+				2B4E0D258D06B3ED4E59A836 /* LoginViewModel.swift */,
+				75BD19D002DE6FEE6930A1DC /* NoteListViewModel.swift */,
+				28374576383B8BE7140E50F2 /* OutlineEditorViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		45F3D3F0221AFD6B066B1590 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				1E1C209A9D837CF922A0B5EF /* DatabaseCardView.swift */,
+				8CCE6C40F680DFD2D19D74DF /* DatabaseListView.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		47907B4D1DCDEAF30002499F /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				07176D7A2FF10754E2A5A7A5 /* CreateNoteSheet.swift */,
+				A7CDAB9281EB061E81541066 /* NoteCardView.swift */,
+				4D35DB430D9C64E97DFA01B0 /* NoteListView.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		4885767E0118169A66742628 = {
+			isa = PBXGroup;
+			children = (
+				BDEBD05C5082FCD61C8EC300 /* Hulunote */,
+				78C23FEBF12BB8284DFCE17E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D12DF8C0B43C8009DF62540 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				2E5B398B54D44F188827C588 /* GradientStyles.swift */,
+				A80A1EA45807ABAB6FC6E335 /* HulunoteColors.swift */,
+				BBD5A95A8C2A5BE1BAC67EBD /* HulunoteTypography.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		5A6520063B63B3FFBE4331A0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				68E1FACCD850E0C1574AC024 /* RootView.swift */,
+				45F3D3F0221AFD6B066B1590 /* Database */,
+				7156AE54299401AF22200948 /* Editor */,
+				1C87688AF9CEC7659A142582 /* Login */,
+				47907B4D1DCDEAF30002499F /* Note */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7156AE54299401AF22200948 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				1C747756AB793525E0E9FD42 /* EditorToolbar.swift */,
+				7E4086D0D80B736AA2A0EA47 /* OutlineBlockView.swift */,
+				56835BF34400FD58FB384EF5 /* OutlineEditorView.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		78C23FEBF12BB8284DFCE17E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E832E3F966E9D4E8C281A05 /* Hulunote.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		991534AA5BCC06B8BD46D422 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				06446E53F24990445D90B750 /* AuthService.swift */,
+				CC261308168E85CDB6D5006C /* DatabaseService.swift */,
+				413392ACFB336FF2CC9BDDAD /* KeychainService.swift */,
+				8745AA875A94D8921638E42C /* NavService.swift */,
+				23AFD1BCB4E401DED1271DCD /* NoteService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A47281C2C18D7C506D1E4F44 /* OutlineTree */ = {
+			isa = PBXGroup;
+			children = (
+				03943330D3A84FDEE2F3A68A /* OutlineNode.swift */,
+				6CA43C70C80BD3E6423853DC /* OutlineTreeBuilder.swift */,
+			);
+			path = OutlineTree;
+			sourceTree = "<group>";
+		};
+		BDEBD05C5082FCD61C8EC300 /* Hulunote */ = {
+			isa = PBXGroup;
+			children = (
+				03CFD2EBCF8E5FC72B62887D /* HulunoteApp.swift */,
+				141A1EFCDFBD031E35C00297 /* Info.plist */,
+				FCA0B0B9419890A2FAD37DB0 /* Models */,
+				10A4024AD73B898706076142 /* Network */,
+				A47281C2C18D7C506D1E4F44 /* OutlineTree */,
+				991534AA5BCC06B8BD46D422 /* Services */,
+				4D12DF8C0B43C8009DF62540 /* Theme */,
+				D577E6C91722D154B00F5021 /* Utilities */,
+				433E677631B7970CE7492DB8 /* ViewModels */,
+				5A6520063B63B3FFBE4331A0 /* Views */,
+			);
+			path = Hulunote;
+			sourceTree = "<group>";
+		};
+		D577E6C91722D154B00F5021 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2DB451BD1AD9610CE3CEF749 /* Color+Hex.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FCA0B0B9419890A2FAD37DB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				851FB4694B9ADB2032737AFB /* Auth.swift */,
+				7A9BDEF20EEF170F0C7E293C /* Database.swift */,
+				555F21F3ADCFC3EF88A97267 /* Nav.swift */,
+				41489142B83D98633A4852EE /* Note.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BDD0AEBBCE13BAC52CB7FC52 /* Hulunote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB6684F7B40D0080CA1C6229 /* Build configuration list for PBXNativeTarget "Hulunote" */;
+			buildPhases = (
+				769EBF2C84062B260BCEB2E0 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hulunote;
+			packageProductDependencies = (
+			);
+			productName = Hulunote;
+			productReference = 6E832E3F966E9D4E8C281A05 /* Hulunote.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9AA9EFD99EDAEACC5903B1E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					BDD0AEBBCE13BAC52CB7FC52 = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = 6DED7FD557BB2AE3DAEB70ED /* Build configuration list for PBXProject "Hulunote" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 4885767E0118169A66742628;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BDD0AEBBCE13BAC52CB7FC52 /* Hulunote */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		769EBF2C84062B260BCEB2E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9B38C746CDEBB9D333DB191 /* APIClient.swift in Sources */,
+				39FFAE0B368A0D8FFBB8716F /* AppViewModel.swift in Sources */,
+				59F774A6138EAEE7A7966ADF /* Auth.swift in Sources */,
+				85CC08180A276F3B2567E078 /* AuthService.swift in Sources */,
+				AED762E6683D165211855025 /* Color+Hex.swift in Sources */,
+				E84295AB84DDE85812D1256F /* CreateNoteSheet.swift in Sources */,
+				C0B202D7D8ECB3327A5E108E /* Database.swift in Sources */,
+				CD833C68EDAA945CAEE88E9A /* DatabaseCardView.swift in Sources */,
+				81810DC358A7E7C885BD46D4 /* DatabaseListView.swift in Sources */,
+				EAFDECCED017CD50E303471E /* DatabaseListViewModel.swift in Sources */,
+				DA3DB86D9E099BB0B0CC833F /* DatabaseService.swift in Sources */,
+				60AA57D3418D2D1D2F20C296 /* EditorToolbar.swift in Sources */,
+				AA95F9E8E73D660C52BDF615 /* GradientStyles.swift in Sources */,
+				A203CC023C548F0D67D63FCE /* HulunoteApp.swift in Sources */,
+				72ACBA1EE1530FC0FB2AB4EB /* HulunoteColors.swift in Sources */,
+				21ED9DBDA60AAA50C1B01224 /* HulunoteTypography.swift in Sources */,
+				F7F233F7D6CEBF87E8C2DBE3 /* KeychainService.swift in Sources */,
+				7DA70AABEE4D169B74125E69 /* LoginView.swift in Sources */,
+				DCB2036324444FF131E80BDB /* LoginViewModel.swift in Sources */,
+				43083B4558D1EC558F154AF2 /* Nav.swift in Sources */,
+				32ED14514C28E7DBAD529443 /* NavService.swift in Sources */,
+				A5B95EF662438572873D61FF /* Note.swift in Sources */,
+				8F034438B001F7034EE21D29 /* NoteCardView.swift in Sources */,
+				63CBCEA67404EBF1C3F63BE5 /* NoteListView.swift in Sources */,
+				2CC6716218F82CCFB91B0B02 /* NoteListViewModel.swift in Sources */,
+				C1975B05F7EABAF7F8C7D43D /* NoteService.swift in Sources */,
+				80E753039814AE4B59BBFF15 /* OutlineBlockView.swift in Sources */,
+				2A5AA2C237D853A5FCDD7C85 /* OutlineEditorView.swift in Sources */,
+				87963757B11FE9CF8980267D /* OutlineEditorViewModel.swift in Sources */,
+				A153099157DC813EFBA00837 /* OutlineNode.swift in Sources */,
+				E0A643E4F8BE7857EDD4E619 /* OutlineTreeBuilder.swift in Sources */,
+				823CD2AFDE3C65A329212FD7 /* RootView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3876C243E1970A6B78EE3568 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		7234631A266A5DC21703955E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		A0D035719C9647B5A84EE336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hulunote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hulunote.ios;
+				PRODUCT_NAME = Hulunote;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EE988BE8330CBD8E993D95DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hulunote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hulunote.ios;
+				PRODUCT_NAME = Hulunote;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6DED7FD557BB2AE3DAEB70ED /* Build configuration list for PBXProject "Hulunote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3876C243E1970A6B78EE3568 /* Debug */,
+				7234631A266A5DC21703955E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CB6684F7B40D0080CA1C6229 /* Build configuration list for PBXNativeTarget "Hulunote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE988BE8330CBD8E993D95DB /* Debug */,
+				A0D035719C9647B5A84EE336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9AA9EFD99EDAEACC5903B1E /* Project object */;
+}
