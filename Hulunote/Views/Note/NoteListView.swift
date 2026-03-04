@@ -62,6 +62,13 @@ struct NoteListView: View {
                                     },
                                     onToggleShortcut: {
                                         Task { await vm.toggleShortcut(noteId: note.id) }
+                                    },
+                                    onR2D2: {
+                                        path.append(R2D2Route(
+                                            noteId: note.id,
+                                            noteTitle: note.title,
+                                            rootNavId: note.rootNavId
+                                        ))
                                     }
                                 )
                             }

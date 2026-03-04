@@ -5,6 +5,7 @@ struct NoteCardView: View {
     let onTap: () -> Void
     let onDelete: () -> Void
     let onToggleShortcut: () -> Void
+    var onR2D2: (() -> Void)? = nil
 
     var body: some View {
         Button(action: onTap) {
@@ -57,6 +58,14 @@ struct NoteCardView: View {
                     note.isShortcut == true ? "Remove from Shortcuts" : "Add to Shortcuts",
                     systemImage: note.isShortcut == true ? "star.slash" : "star"
                 )
+            }
+
+            if let onR2D2 {
+                Button {
+                    onR2D2()
+                } label: {
+                    Label("R2D2 Chat", systemImage: "bubble.left.and.bubble.right")
+                }
             }
 
             Button(role: .destructive) {

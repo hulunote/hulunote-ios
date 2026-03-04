@@ -42,6 +42,9 @@
 		EAFDECCED017CD50E303471E /* DatabaseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E882D12EC826E9F0AACA59 /* DatabaseListViewModel.swift */; };
 		F4CE09278C460BF3D2D8165C /* WordLearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACFF45D4083338BE4E1CD4A /* WordLearningView.swift */; };
 		F7F233F7D6CEBF87E8C2DBE3 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413392ACFB336FF2CC9BDDAD /* KeychainService.swift */; };
+		DDDD444455556666DDDD4444 /* R2D2ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA111122223333AAAA1111 /* R2D2ChatViewModel.swift */; };
+		EEEE555566667777EEEE5555 /* R2D2ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB222233334444BBBB2222 /* R2D2ChatView.swift */; };
+		FFFF666677778888FFFF6666 /* R2D2MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC333344445555CCCC3333 /* R2D2MessageBubble.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +85,9 @@
 		C5A8E03FFEC039E21012BC69 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CC261308168E85CDB6D5006C /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		FD26AD834F2A9A0DDD3A1D20 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		AAAA111122223333AAAA1111 /* R2D2ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2D2ChatViewModel.swift; sourceTree = "<group>"; };
+		BBBB222233334444BBBB2222 /* R2D2ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2D2ChatView.swift; sourceTree = "<group>"; };
+		CCCC333344445555CCCC3333 /* R2D2MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2D2MessageBubble.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -109,6 +115,7 @@
 				2B4E0D258D06B3ED4E59A836 /* LoginViewModel.swift */,
 				75BD19D002DE6FEE6930A1DC /* NoteListViewModel.swift */,
 				28374576383B8BE7140E50F2 /* OutlineEditorViewModel.swift */,
+				AAAA111122223333AAAA1111 /* R2D2ChatViewModel.swift */,
 				26CEC4E89DBE065E552A6D2D /* WordLearningViewModel.swift */,
 			);
 			path = ViewModels;
@@ -167,6 +174,7 @@
 				7156AE54299401AF22200948 /* Editor */,
 				1C87688AF9CEC7659A142582 /* Login */,
 				47907B4D1DCDEAF30002499F /* Note */,
+				1111AAAA2222BBBB3333CCCC /* R2D2 */,
 				98CE3FA982BAFCF17B4D8293 /* WordLearning */,
 			);
 			path = Views;
@@ -196,6 +204,15 @@
 				6ACFF45D4083338BE4E1CD4A /* WordLearningView.swift */,
 			);
 			path = WordLearning;
+			sourceTree = "<group>";
+		};
+		1111AAAA2222BBBB3333CCCC /* R2D2 */ = {
+			isa = PBXGroup;
+			children = (
+				BBBB222233334444BBBB2222 /* R2D2ChatView.swift */,
+				CCCC333344445555CCCC3333 /* R2D2MessageBubble.swift */,
+			);
+			path = R2D2;
 			sourceTree = "<group>";
 		};
 		991534AA5BCC06B8BD46D422 /* Services */ = {
@@ -345,6 +362,9 @@
 				87963757B11FE9CF8980267D /* OutlineEditorViewModel.swift in Sources */,
 				A153099157DC813EFBA00837 /* OutlineNode.swift in Sources */,
 				E0A643E4F8BE7857EDD4E619 /* OutlineTreeBuilder.swift in Sources */,
+				DDDD444455556666DDDD4444 /* R2D2ChatViewModel.swift in Sources */,
+				EEEE555566667777EEEE5555 /* R2D2ChatView.swift in Sources */,
+				FFFF666677778888FFFF6666 /* R2D2MessageBubble.swift in Sources */,
 				823CD2AFDE3C65A329212FD7 /* RootView.swift in Sources */,
 				0E7437715EFC33B5513AD66E /* UIApplication+Extensions.swift in Sources */,
 				F4CE09278C460BF3D2D8165C /* WordLearningView.swift in Sources */,

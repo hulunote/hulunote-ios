@@ -33,6 +33,12 @@ struct WordLearningRoute: Hashable {
     let databaseName: String
 }
 
+struct R2D2Route: Hashable {
+    let noteId: String
+    let noteTitle: String
+    let rootNavId: String?
+}
+
 // MARK: - Main Navigation
 
 struct MainNavigationView: View {
@@ -60,6 +66,13 @@ struct MainNavigationView: View {
                     WordLearningView(
                         databaseId: route.databaseId,
                         databaseName: route.databaseName
+                    )
+                }
+                .navigationDestination(for: R2D2Route.self) { route in
+                    R2D2ChatView(
+                        noteId: route.noteId,
+                        noteTitle: route.noteTitle,
+                        rootNavId: route.rootNavId
                     )
                 }
         }
