@@ -25,6 +25,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Hulunote needs microphone access for voice input in R2D2 chat.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Hulunote uses speech recognition to convert your voice to text notes.</string>
 	<key>UILaunchScreen</key>
 	<dict/>
 	<key>UISupportedInterfaceOrientations</key>

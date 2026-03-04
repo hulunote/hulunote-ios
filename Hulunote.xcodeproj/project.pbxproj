@@ -45,6 +45,7 @@
 		DDDD444455556666DDDD4444 /* R2D2ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA111122223333AAAA1111 /* R2D2ChatViewModel.swift */; };
 		EEEE555566667777EEEE5555 /* R2D2ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB222233334444BBBB2222 /* R2D2ChatView.swift */; };
 		FFFF666677778888FFFF6666 /* R2D2MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC333344445555CCCC3333 /* R2D2MessageBubble.swift */; };
+		AAAA999988887777AAAA9999 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB888877776666BBBB8888 /* SpeechService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		AAAA111122223333AAAA1111 /* R2D2ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2D2ChatViewModel.swift; sourceTree = "<group>"; };
 		BBBB222233334444BBBB2222 /* R2D2ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2D2ChatView.swift; sourceTree = "<group>"; };
 		CCCC333344445555CCCC3333 /* R2D2MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2D2MessageBubble.swift; sourceTree = "<group>"; };
+		BBBB888877776666BBBB8888 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -223,6 +225,7 @@
 				413392ACFB336FF2CC9BDDAD /* KeychainService.swift */,
 				8745AA875A94D8921638E42C /* NavService.swift */,
 				23AFD1BCB4E401DED1271DCD /* NoteService.swift */,
+				BBBB888877776666BBBB8888 /* SpeechService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				DDDD444455556666DDDD4444 /* R2D2ChatViewModel.swift in Sources */,
 				EEEE555566667777EEEE5555 /* R2D2ChatView.swift in Sources */,
 				FFFF666677778888FFFF6666 /* R2D2MessageBubble.swift in Sources */,
+				AAAA999988887777AAAA9999 /* SpeechService.swift in Sources */,
 				823CD2AFDE3C65A329212FD7 /* RootView.swift in Sources */,
 				0E7437715EFC33B5513AD66E /* UIApplication+Extensions.swift in Sources */,
 				F4CE09278C460BF3D2D8165C /* WordLearningView.swift in Sources */,

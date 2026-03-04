@@ -17,6 +17,11 @@ struct R2D2ChatView: View {
                     // Messages list
                     messagesList(vm: vm)
 
+                    // Recording status bar
+                    if vm.speechService.isRecording {
+                        recordingBar(vm: vm)
+                    }
+
                     // Reply preview bar
                     if let reply = vm.replyingTo {
                         replyPreview(reply: reply, vm: vm)
@@ -131,11 +136,49 @@ struct R2D2ChatView: View {
         .background(Color.hulunoteSidebar)
     }
 
+    // MARK: - Recording Bar
+
+    @ViewBuilder
+    private func recordingBar(vm: R2D2ChatViewModel) -> some View {
+        HStack(spacing: 10) {
+            Circle()
+                .fill(Color.red)
+                .frame(width: 8, height: 8)
+                .modifier(PulseModifier())
+
+            Text("\(vm.speechService.recordingTimeRemaining)s")
+                .font(HulunoteFont.caption)
+                .foregroundColor(.red)
+                .monospacedDigit()
+
+            Text(vm.speechService.recognizedText.isEmpty
+                 ? "Listening..."
+                 : vm.speechService.recognizedText)
+                .font(HulunoteFont.caption)
+                .foregroundColor(.hulunoteTextSecondary)
+                .lineLimit(1)
+
+            Spacer()
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(Color.hulunoteSidebar)
+    }
+
     // MARK: - Input Bar
 
     @ViewBuilder
     private func inputBar(vm: R2D2ChatViewModel) -> some View {
         HStack(spacing: 10) {
+            // Mic button
+            Button {
+                vm.toggleRecording()
+            } label: {
+                Image(systemName: vm.speechService.isRecording ? "mic.fill" : "mic")
+                    .font(.system(size: 22))
+                    .foregroundColor(vm.speechService.isRecording ? .red : .hulunoteTextSecondary)
+            }
+
             TextField("Type a message...", text: Binding(
                 get: { vm.inputText },
                 set: { vm.inputText = $0 }
@@ -165,5 +208,18 @@ struct R2D2ChatView: View {
         .padding(.horizontal, 12)
         .padding(.vertical, 8)
         .background(Color.hulunoteSidebar)
+    }
+}
+
+// MARK: - Pulse Animation
+
+struct PulseModifier: ViewModifier {
+    @State private var isPulsing = false
+
+    func body(content: Content) -> some View {
+        content
+            .opacity(isPulsing ? 0.3 : 1.0)
+            .animation(.easeInOut(duration: 0.8).repeatForever(autoreverses: true), value: isPulsing)
+            .onAppear { isPulsing = true }
     }
 }

@@ -9,6 +9,7 @@ struct R2D2Message: Identifiable {
     let replyToContent: String?  // content of the parent message (if replying)
 }
 
+@MainActor
 @Observable
 final class R2D2ChatViewModel {
     var messages: [R2D2Message] = []
@@ -22,6 +23,7 @@ final class R2D2ChatViewModel {
     let noteTitle: String
     private let navService: NavService
     private var navList: [NavInfo] = []
+    let speechService = SpeechService()
 
     init(noteId: String, noteTitle: String, rootNavId: String?, apiClient: APIClient) {
         self.noteId = noteId
@@ -32,7 +34,6 @@ final class R2D2ChatViewModel {
 
     // MARK: - Load
 
-    @MainActor
     func loadMessages() async {
         isLoading = true
         error = nil
@@ -97,7 +98,6 @@ final class R2D2ChatViewModel {
 
     // MARK: - Send Message
 
-    @MainActor
     func sendMessage() async {
         let content = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !content.isEmpty else { return }
@@ -133,7 +133,6 @@ final class R2D2ChatViewModel {
 
     // MARK: - Delete Message
 
-    @MainActor
     func deleteMessage(messageId: String) async {
         do {
             _ = try await navService.deleteNav(noteId: noteId, navId: messageId)
@@ -163,5 +162,26 @@ final class R2D2ChatViewModel {
 
     func cancelReply() {
         replyingTo = nil
+    }
+
+    // MARK: - Voice Input
+
+    func toggleRecording() {
+        if speechService.isRecording {
+            speechService.stopRecording()
+            // Transfer recognized text to input
+            let text = speechService.recognizedText.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !text.isEmpty {
+                if inputText.isEmpty {
+                    inputText = text
+                } else {
+                    inputText += " " + text
+                }
+            }
+        } else {
+            Task {
+                await speechService.startRecording()
+            }
+        }
     }
 }
