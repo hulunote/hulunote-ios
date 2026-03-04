@@ -5,6 +5,7 @@ struct EditorKeyboardToolbar: View {
     let onOutdent: () -> Void
     let onAddBlock: () -> Void
     let onDeleteBlock: () -> Void
+    var onInsertLink: (() -> Void)? = nil
 
     var body: some View {
         HStack(spacing: 16) {
@@ -33,6 +34,17 @@ struct EditorKeyboardToolbar: View {
                 Image(systemName: "trash")
                     .font(.system(size: 16))
                     .foregroundColor(.hulunoteTextSecondary)
+            }
+
+            Divider()
+                .frame(height: 20)
+
+            Button {
+                onInsertLink?()
+            } label: {
+                Text("[]")
+                    .font(.system(size: 14, weight: .semibold, design: .monospaced))
+                    .foregroundColor(.hulunoteAccent)
             }
 
             Spacer()
