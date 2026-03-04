@@ -5,9 +5,12 @@ struct OutlineEditorView: View {
     let noteId: String
     let noteTitle: String
     let rootNavId: String?
+    let databaseId: String?
+    @Binding var path: NavigationPath
 
     @State private var viewModel: OutlineEditorViewModel?
     @State private var selectedNodeId: String?
+    @State private var backlinksViewModel: BacklinksViewModel?
 
     var body: some View {
         ZStack {
@@ -79,6 +82,9 @@ struct OutlineEditorView: View {
                                         },
                                         onToggleCollapse: {
                                             vm.toggleCollapse(navId: node.id)
+                                        },
+                                        onLinkTap: { title in
+                                            navigateToNote(title: title)
                                         }
                                     )
                                     .id(node.id)
@@ -89,7 +95,24 @@ struct OutlineEditorView: View {
                             }
                             .padding(.horizontal, 8)
                             .padding(.top, 8)
-                            .padding(.bottom, 100)
+
+                            // Backlinks section
+                            if let blvm = backlinksViewModel {
+                                BacklinksView(
+                                    backlinks: blvm.backlinks,
+                                    isLoading: blvm.isLoading,
+                                    onNoteTap: { noteId, noteTitle, rootNavId in
+                                        path.append(EditorRoute(
+                                            noteId: noteId,
+                                            noteTitle: noteTitle,
+                                            rootNavId: rootNavId,
+                                            databaseId: databaseId
+                                        ))
+                                    }
+                                )
+                            }
+
+                            Spacer().frame(height: 100)
                         }
 
                         // Keyboard toolbar
@@ -167,9 +190,43 @@ struct OutlineEditorView: View {
                     apiClient: appViewModel.apiClient
                 )
             }
+            if backlinksViewModel == nil, let dbId = databaseId {
+                backlinksViewModel = BacklinksViewModel(
+                    noteTitle: noteTitle,
+                    noteId: noteId,
+                    databaseId: dbId,
+                    apiClient: appViewModel.apiClient
+                )
+            }
         }
         .task {
             await viewModel?.loadNavs()
+            await backlinksViewModel?.loadBacklinks()
+        }
+    }
+
+    private func navigateToNote(title: String) {
+        guard let dbId = databaseId else { return }
+
+        Task {
+            let noteService = NoteService(api: appViewModel.apiClient)
+            do {
+                let allNotes = try await noteService.getAllNotes(databaseId: dbId)
+                if let targetNote = allNotes.first(where: {
+                    $0.title == title && $0.isDelete != true
+                }) {
+                    await MainActor.run {
+                        path.append(EditorRoute(
+                            noteId: targetNote.id,
+                            noteTitle: targetNote.title,
+                            rootNavId: targetNote.rootNavId,
+                            databaseId: dbId
+                        ))
+                    }
+                }
+            } catch {
+                // Note not found - do nothing
+            }
         }
     }
 }

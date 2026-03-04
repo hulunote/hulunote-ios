@@ -54,7 +54,8 @@ struct NoteListView: View {
                                         path.append(EditorRoute(
                                             noteId: note.id,
                                             noteTitle: note.title,
-                                            rootNavId: note.rootNavId
+                                            rootNavId: note.rootNavId,
+                                            databaseId: databaseId
                                         ))
                                     },
                                     onDelete: {

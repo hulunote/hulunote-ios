@@ -26,6 +26,7 @@ struct EditorRoute: Hashable {
     let noteId: String
     let noteTitle: String
     let rootNavId: String?
+    let databaseId: String?
 }
 
 struct WordLearningRoute: Hashable {
@@ -59,7 +60,9 @@ struct MainNavigationView: View {
                     OutlineEditorView(
                         noteId: route.noteId,
                         noteTitle: route.noteTitle,
-                        rootNavId: route.rootNavId
+                        rootNavId: route.rootNavId,
+                        databaseId: route.databaseId,
+                        path: $path
                     )
                 }
                 .navigationDestination(for: WordLearningRoute.self) { route in

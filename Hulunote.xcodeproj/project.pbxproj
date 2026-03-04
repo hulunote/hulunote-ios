@@ -46,6 +46,9 @@
 		EEEE555566667777EEEE5555 /* R2D2ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB222233334444BBBB2222 /* R2D2ChatView.swift */; };
 		FFFF666677778888FFFF6666 /* R2D2MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC333344445555CCCC3333 /* R2D2MessageBubble.swift */; };
 		AAAA999988887777AAAA9999 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB888877776666BBBB8888 /* SpeechService.swift */; };
+		BLINK0001BLINK0001BLINK /* BiDirectionalLinkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BLINK0002BLINK0002BLINK /* BiDirectionalLinkParser.swift */; };
+		BLINK0003BLINK0003BLINK /* BacklinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BLINK0004BLINK0004BLINK /* BacklinksView.swift */; };
+		BLINK0005BLINK0005BLINK /* BacklinksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BLINK0006BLINK0006BLINK /* BacklinksViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +93,9 @@
 		BBBB222233334444BBBB2222 /* R2D2ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2D2ChatView.swift; sourceTree = "<group>"; };
 		CCCC333344445555CCCC3333 /* R2D2MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2D2MessageBubble.swift; sourceTree = "<group>"; };
 		BBBB888877776666BBBB8888 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
+		BLINK0002BLINK0002BLINK /* BiDirectionalLinkParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiDirectionalLinkParser.swift; sourceTree = "<group>"; };
+		BLINK0004BLINK0004BLINK /* BacklinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacklinksView.swift; sourceTree = "<group>"; };
+		BLINK0006BLINK0006BLINK /* BacklinksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacklinksViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -113,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				FD26AD834F2A9A0DDD3A1D20 /* AppViewModel.swift */,
+				BLINK0006BLINK0006BLINK /* BacklinksViewModel.swift */,
 				28E882D12EC826E9F0AACA59 /* DatabaseListViewModel.swift */,
 				2B4E0D258D06B3ED4E59A836 /* LoginViewModel.swift */,
 				75BD19D002DE6FEE6930A1DC /* NoteListViewModel.swift */,
@@ -185,6 +192,7 @@
 		7156AE54299401AF22200948 /* Editor */ = {
 			isa = PBXGroup;
 			children = (
+				BLINK0004BLINK0004BLINK /* BacklinksView.swift */,
 				1C747756AB793525E0E9FD42 /* EditorToolbar.swift */,
 				7E4086D0D80B736AA2A0EA47 /* OutlineBlockView.swift */,
 				56835BF34400FD58FB384EF5 /* OutlineEditorView.swift */,
@@ -260,6 +268,7 @@
 		D577E6C91722D154B00F5021 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BLINK0002BLINK0002BLINK /* BiDirectionalLinkParser.swift */,
 				2DB451BD1AD9610CE3CEF749 /* Color+Hex.swift */,
 			);
 			path = Utilities;
@@ -336,6 +345,9 @@
 			files = (
 				C9B38C746CDEBB9D333DB191 /* APIClient.swift in Sources */,
 				39FFAE0B368A0D8FFBB8716F /* AppViewModel.swift in Sources */,
+				BLINK0005BLINK0005BLINK /* BacklinksViewModel.swift in Sources */,
+				BLINK0003BLINK0003BLINK /* BacklinksView.swift in Sources */,
+				BLINK0001BLINK0001BLINK /* BiDirectionalLinkParser.swift in Sources */,
 				59F774A6138EAEE7A7966ADF /* Auth.swift in Sources */,
 				85CC08180A276F3B2567E078 /* AuthService.swift in Sources */,
 				AED762E6683D165211855025 /* Color+Hex.swift in Sources */,
