@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A0637105BD83FECF5AA4A67 /* knowed-word.txt in Resources */ = {isa = PBXBuildFile; fileRef = 819ADA3C09D9340B1615E9D3 /* knowed-word.txt */; };
 		0E7437715EFC33B5513AD66E /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25380C4F0F45A5BEAE7BCE85 /* UIApplication+Extensions.swift */; };
 		21ED9DBDA60AAA50C1B01224 /* HulunoteTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5A95A8C2A5BE1BAC67EBD /* HulunoteTypography.swift */; };
 		2A5AA2C237D853A5FCDD7C85 /* OutlineEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56835BF34400FD58FB384EF5 /* OutlineEditorView.swift */; };
@@ -74,7 +73,6 @@
 		75BD19D002DE6FEE6930A1DC /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
 		7A9BDEF20EEF170F0C7E293C /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		7E4086D0D80B736AA2A0EA47 /* OutlineBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineBlockView.swift; sourceTree = "<group>"; };
-		819ADA3C09D9340B1615E9D3 /* knowed-word.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "knowed-word.txt"; sourceTree = "<group>"; };
 		851FB4694B9ADB2032737AFB /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		8745AA875A94D8921638E42C /* NavService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavService.swift; sourceTree = "<group>"; };
 		8CCE6C40F680DFD2D19D74DF /* DatabaseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseListView.swift; sourceTree = "<group>"; };
@@ -192,14 +190,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8A7231749BF65347D5C0709C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				819ADA3C09D9340B1615E9D3 /* knowed-word.txt */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		98CE3FA982BAFCF17B4D8293 /* WordLearning */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,7 +228,6 @@
 				FCA0B0B9419890A2FAD37DB0 /* Models */,
 				10A4024AD73B898706076142 /* Network */,
 				A47281C2C18D7C506D1E4F44 /* OutlineTree */,
-				8A7231749BF65347D5C0709C /* Resources */,
 				991534AA5BCC06B8BD46D422 /* Services */,
 				4D12DF8C0B43C8009DF62540 /* Theme */,
 				D577E6C91722D154B00F5021 /* Utilities */,
@@ -275,7 +264,6 @@
 			buildConfigurationList = CB6684F7B40D0080CA1C6229 /* Build configuration list for PBXNativeTarget "Hulunote" */;
 			buildPhases = (
 				769EBF2C84062B260BCEB2E0 /* Sources */,
-				3076C62B85A83AB77AC7C8BF /* Resources */,
 			);
 			buildRules = (
 			);
@@ -320,17 +308,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		3076C62B85A83AB77AC7C8BF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0A0637105BD83FECF5AA4A67 /* knowed-word.txt in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		769EBF2C84062B260BCEB2E0 /* Sources */ = {

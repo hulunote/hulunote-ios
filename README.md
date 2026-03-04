@@ -3,6 +3,7 @@
 A native iOS outline editor for [Hulunote](https://www.hulunote.top) — a hierarchical note-taking application built with SwiftUI.
 
 ![](./ios-demo-all.png)
+![](./learn-word.png)
 
 ## Features
 
@@ -13,6 +14,7 @@ A native iOS outline editor for [Hulunote](https://www.hulunote.top) — a hiera
 - **Database & Note Management** — Browse databases, create/delete/search notes, mark shortcuts
 - **Dark Theme** — Purpose-built dark UI with purple gradient accents
 - **Secure Auth** — JWT-based authentication with Keychain token storage
+- **Learn English** - English Leaning from your life by LLM
 
 ## Screenshots
 

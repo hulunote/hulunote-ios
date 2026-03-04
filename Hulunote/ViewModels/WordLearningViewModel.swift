@@ -9,12 +9,16 @@ final class WordLearningViewModel {
     var error: String?
     var currentWord: String = ""
     var totalCount: Int = 0
+    var isSaving = false
 
     let databaseId: String
     let databaseName: String
     private let noteService: NoteService
     private let navService: NavService
     private let synth = AVSpeechSynthesizer()
+
+    private var memorizedNoteId: String?
+    private var memorizedRootNavId: String?
 
     init(databaseId: String, databaseName: String, apiClient: APIClient) {
         self.databaseId = databaseId
@@ -34,9 +38,12 @@ final class WordLearningViewModel {
             let notes = try await noteService.getAllNotes(databaseId: databaseId)
             let activeNotes = notes.filter { $0.isDelete != true }
 
-            // 2. Load all nav blocks for each note
+            // 2. Find or create "Memorized Words" note
+            let memorizedWords = try await loadMemorizedWords(from: activeNotes)
+
+            // 3. Load all nav blocks from OTHER notes (not the memorized words note)
             var allContent: [String] = []
-            for note in activeNotes {
+            for note in activeNotes where note.id != memorizedNoteId {
                 let navs = try await navService.getNavList(noteId: note.id)
                 let contents = navs
                     .filter { $0.isDelete != true && $0.content != "ROOT" && !$0.content.isEmpty }
@@ -44,10 +51,9 @@ final class WordLearningViewModel {
                 allContent.append(contentsOf: contents)
             }
 
-            // 3. Parse words and filter known words
-            let knownWords = loadKnownWords()
+            // 4. Parse English-only words and filter memorized ones
             let parsed = parseWords(from: allContent)
-            let newWords = parsed.filter { !knownWords.contains($0.lowercased()) }
+            let newWords = parsed.filter { !memorizedWords.contains($0.lowercased()) }
 
             // Remove duplicates while preserving order
             var seen = Set<String>()
@@ -66,6 +72,99 @@ final class WordLearningViewModel {
             self.error = error.localizedDescription
         }
         isLoading = false
+    }
+
+    // MARK: - Memorized Words Note
+
+    private func loadMemorizedWords(from notes: [NoteInfo]) async throws -> Set<String> {
+        // Find existing "Memorized Words" note
+        if let existingNote = notes.first(where: { $0.title == "Memorized Words" }) {
+            memorizedNoteId = existingNote.id
+            memorizedRootNavId = existingNote.rootNavId
+
+            let navs = try await navService.getNavList(noteId: existingNote.id)
+            // Find root nav id if not set
+            if memorizedRootNavId == nil {
+                let nilUUID = OutlineTreeBuilder.nilUUID
+                let rootNav = navs.first { nav in
+                    nav.parid == nil
+                        || nav.parid == nilUUID
+                        || nav.parid == nav.id
+                        || nav.parid?.isEmpty == true
+                }
+                memorizedRootNavId = rootNav?.id
+            }
+
+            let words = navs
+                .filter { $0.isDelete != true && $0.content != "ROOT" && !$0.content.isEmpty }
+                .map { $0.content.lowercased().trimmingCharacters(in: .whitespaces) }
+            return Set(words)
+        }
+
+        // Create "Memorized Words" note if it doesn't exist
+        let newNote = try await noteService.createNote(databaseId: databaseId, title: "Memorized Words")
+        memorizedNoteId = newNote.id
+        memorizedRootNavId = newNote.rootNavId
+
+        // Load navs to get root nav id
+        if memorizedRootNavId == nil {
+            let navs = try await navService.getNavList(noteId: newNote.id)
+            let nilUUID = OutlineTreeBuilder.nilUUID
+            let rootNav = navs.first { nav in
+                nav.parid == nil
+                    || nav.parid == nilUUID
+                    || nav.parid == nav.id
+                    || nav.parid?.isEmpty == true
+            }
+            memorizedRootNavId = rootNav?.id
+        }
+
+        return []
+    }
+
+    // MARK: - Mark as Remembered
+
+    @MainActor
+    func markAsRemembered() async {
+        guard !currentWord.isEmpty,
+              let noteId = memorizedNoteId,
+              let rootId = memorizedRootNavId else { return }
+
+        isSaving = true
+        do {
+            // Save word to "Memorized Words" note
+            _ = try await navService.createNav(
+                noteId: noteId,
+                parid: rootId,
+                content: currentWord,
+                order: Float(Date().timeIntervalSince1970)
+            )
+
+            // Remove from current list
+            if let idx = words.firstIndex(where: { $0.lowercased() == currentWord.lowercased() }) {
+                words.remove(at: idx)
+                totalCount = words.count
+
+                // Adjust index
+                if currentIndex > idx {
+                    currentIndex -= 1
+                }
+                if currentIndex >= totalCount {
+                    currentIndex = 0
+                }
+
+                // Show next word
+                if !words.isEmpty {
+                    currentWord = words[currentIndex]
+                    speak(currentWord)
+                } else {
+                    currentWord = ""
+                }
+            }
+        } catch {
+            self.error = error.localizedDescription
+        }
+        isSaving = false
     }
 
     // MARK: - TTS
@@ -105,21 +204,13 @@ final class WordLearningViewModel {
         synth.speak(utterance)
     }
 
-    // MARK: - Word Parsing
+    // MARK: - Word Parsing (English-only)
 
     private func parseWords(from contents: [String]) -> [String] {
         let separators = CharacterSet(charactersIn: " .)/(\",：:[];_-@*#!?{}|<>~`+=%&^$\n\r\t")
         return contents
             .flatMap { $0.components(separatedBy: separators) }
-            .filter { $0.rangeOfCharacter(from: .letters) != nil }
-            .filter { $0.count > 1 } // skip single chars
-    }
-
-    private func loadKnownWords() -> Set<String> {
-        guard let url = Bundle.main.url(forResource: "knowed-word", withExtension: "txt"),
-              let content = try? String(contentsOf: url, encoding: .utf8) else {
-            return []
-        }
-        return Set(content.lowercased().components(separatedBy: .newlines).filter { !$0.isEmpty })
+            .filter { $0.count > 1 }
+            .filter { $0.allSatisfy { $0.isASCII && $0.isLetter } } // English letters only
     }
 }

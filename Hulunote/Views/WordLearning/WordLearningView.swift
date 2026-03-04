@@ -83,7 +83,7 @@ struct WordLearningView: View {
 
             Spacer()
 
-            // Control buttons
+            // Control buttons row 1
             HStack(spacing: 16) {
                 controlButton(title: "Repeat", icon: "arrow.counterclockwise") {
                     vm.speakCurrent()
@@ -99,6 +99,31 @@ struct WordLearningView: View {
                 }
             }
             .padding(.horizontal)
+
+            Button {
+                Task { await vm.markAsRemembered() }
+            } label: {
+                HStack(spacing: 8) {
+                    if vm.isSaving {
+                        ProgressView()
+                            .tint(.white)
+                            .scaleEffect(0.8)
+                    } else {
+                        Image(systemName: "checkmark.circle.fill")
+                    }
+                    Text("I've remembered")
+                }
+                .font(.system(size: 18, weight: .medium))
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 12)
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.hulunoteSuccess)
+                )
+            }
+            .disabled(vm.isSaving || vm.currentWord.isEmpty)
+            .padding(.horizontal, 32)
 
             // Primary button: Speak Next
             Button {
