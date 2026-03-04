@@ -86,11 +86,22 @@ struct NoteListView: View {
         )
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    viewModel?.showCreateSheet = true
-                } label: {
-                    Image(systemName: "plus")
-                        .foregroundColor(.hulunoteAccent)
+                HStack(spacing: 16) {
+                    Button {
+                        path.append(WordLearningRoute(
+                            databaseId: databaseId,
+                            databaseName: databaseName
+                        ))
+                    } label: {
+                        Image(systemName: "textformat.abc")
+                            .foregroundColor(.hulunoteAccent)
+                    }
+                    Button {
+                        viewModel?.showCreateSheet = true
+                    } label: {
+                        Image(systemName: "plus")
+                            .foregroundColor(.hulunoteAccent)
+                    }
                 }
             }
         }

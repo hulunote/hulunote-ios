@@ -28,6 +28,11 @@ struct EditorRoute: Hashable {
     let rootNavId: String?
 }
 
+struct WordLearningRoute: Hashable {
+    let databaseId: String
+    let databaseName: String
+}
+
 // MARK: - Main Navigation
 
 struct MainNavigationView: View {
@@ -49,6 +54,12 @@ struct MainNavigationView: View {
                         noteId: route.noteId,
                         noteTitle: route.noteTitle,
                         rootNavId: route.rootNavId
+                    )
+                }
+                .navigationDestination(for: WordLearningRoute.self) { route in
+                    WordLearningView(
+                        databaseId: route.databaseId,
+                        databaseName: route.databaseName
                     )
                 }
         }

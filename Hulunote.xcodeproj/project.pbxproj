@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0637105BD83FECF5AA4A67 /* knowed-word.txt in Resources */ = {isa = PBXBuildFile; fileRef = 819ADA3C09D9340B1615E9D3 /* knowed-word.txt */; };
+		0E7437715EFC33B5513AD66E /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25380C4F0F45A5BEAE7BCE85 /* UIApplication+Extensions.swift */; };
 		21ED9DBDA60AAA50C1B01224 /* HulunoteTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5A95A8C2A5BE1BAC67EBD /* HulunoteTypography.swift */; };
 		2A5AA2C237D853A5FCDD7C85 /* OutlineEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56835BF34400FD58FB384EF5 /* OutlineEditorView.swift */; };
 		2CC6716218F82CCFB91B0B02 /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD19D002DE6FEE6930A1DC /* NoteListViewModel.swift */; };
@@ -23,6 +25,7 @@
 		823CD2AFDE3C65A329212FD7 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E1FACCD850E0C1574AC024 /* RootView.swift */; };
 		85CC08180A276F3B2567E078 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06446E53F24990445D90B750 /* AuthService.swift */; };
 		87963757B11FE9CF8980267D /* OutlineEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28374576383B8BE7140E50F2 /* OutlineEditorViewModel.swift */; };
+		8C87A0EEABE28A67C498B02F /* WordLearningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CEC4E89DBE065E552A6D2D /* WordLearningViewModel.swift */; };
 		8F034438B001F7034EE21D29 /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDAB9281EB061E81541066 /* NoteCardView.swift */; };
 		A153099157DC813EFBA00837 /* OutlineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03943330D3A84FDEE2F3A68A /* OutlineNode.swift */; };
 		A203CC023C548F0D67D63FCE /* HulunoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CFD2EBCF8E5FC72B62887D /* HulunoteApp.swift */; };
@@ -38,6 +41,7 @@
 		E0A643E4F8BE7857EDD4E619 /* OutlineTreeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA43C70C80BD3E6423853DC /* OutlineTreeBuilder.swift */; };
 		E84295AB84DDE85812D1256F /* CreateNoteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07176D7A2FF10754E2A5A7A5 /* CreateNoteSheet.swift */; };
 		EAFDECCED017CD50E303471E /* DatabaseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E882D12EC826E9F0AACA59 /* DatabaseListViewModel.swift */; };
+		F4CE09278C460BF3D2D8165C /* WordLearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACFF45D4083338BE4E1CD4A /* WordLearningView.swift */; };
 		F7F233F7D6CEBF87E8C2DBE3 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413392ACFB336FF2CC9BDDAD /* KeychainService.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +55,8 @@
 		1C747756AB793525E0E9FD42 /* EditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorToolbar.swift; sourceTree = "<group>"; };
 		1E1C209A9D837CF922A0B5EF /* DatabaseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseCardView.swift; sourceTree = "<group>"; };
 		23AFD1BCB4E401DED1271DCD /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
+		25380C4F0F45A5BEAE7BCE85 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		26CEC4E89DBE065E552A6D2D /* WordLearningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLearningViewModel.swift; sourceTree = "<group>"; };
 		28374576383B8BE7140E50F2 /* OutlineEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineEditorViewModel.swift; sourceTree = "<group>"; };
 		28E882D12EC826E9F0AACA59 /* DatabaseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseListViewModel.swift; sourceTree = "<group>"; };
 		2B4E0D258D06B3ED4E59A836 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -62,11 +68,13 @@
 		555F21F3ADCFC3EF88A97267 /* Nav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nav.swift; sourceTree = "<group>"; };
 		56835BF34400FD58FB384EF5 /* OutlineEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineEditorView.swift; sourceTree = "<group>"; };
 		68E1FACCD850E0C1574AC024 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		6ACFF45D4083338BE4E1CD4A /* WordLearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLearningView.swift; sourceTree = "<group>"; };
 		6CA43C70C80BD3E6423853DC /* OutlineTreeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineTreeBuilder.swift; sourceTree = "<group>"; };
 		6E832E3F966E9D4E8C281A05 /* Hulunote.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Hulunote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BD19D002DE6FEE6930A1DC /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
 		7A9BDEF20EEF170F0C7E293C /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		7E4086D0D80B736AA2A0EA47 /* OutlineBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineBlockView.swift; sourceTree = "<group>"; };
+		819ADA3C09D9340B1615E9D3 /* knowed-word.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "knowed-word.txt"; sourceTree = "<group>"; };
 		851FB4694B9ADB2032737AFB /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		8745AA875A94D8921638E42C /* NavService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavService.swift; sourceTree = "<group>"; };
 		8CCE6C40F680DFD2D19D74DF /* DatabaseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseListView.swift; sourceTree = "<group>"; };
@@ -103,6 +111,7 @@
 				2B4E0D258D06B3ED4E59A836 /* LoginViewModel.swift */,
 				75BD19D002DE6FEE6930A1DC /* NoteListViewModel.swift */,
 				28374576383B8BE7140E50F2 /* OutlineEditorViewModel.swift */,
+				26CEC4E89DBE065E552A6D2D /* WordLearningViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -134,6 +143,14 @@
 			);
 			sourceTree = "<group>";
 		};
+		4AB362040C42E6786253F706 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				25380C4F0F45A5BEAE7BCE85 /* UIApplication+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4D12DF8C0B43C8009DF62540 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +169,7 @@
 				7156AE54299401AF22200948 /* Editor */,
 				1C87688AF9CEC7659A142582 /* Login */,
 				47907B4D1DCDEAF30002499F /* Note */,
+				98CE3FA982BAFCF17B4D8293 /* WordLearning */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,6 +190,22 @@
 				6E832E3F966E9D4E8C281A05 /* Hulunote.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8A7231749BF65347D5C0709C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				819ADA3C09D9340B1615E9D3 /* knowed-word.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		98CE3FA982BAFCF17B4D8293 /* WordLearning */ = {
+			isa = PBXGroup;
+			children = (
+				6ACFF45D4083338BE4E1CD4A /* WordLearningView.swift */,
+			);
+			path = WordLearning;
 			sourceTree = "<group>";
 		};
 		991534AA5BCC06B8BD46D422 /* Services */ = {
@@ -200,9 +234,11 @@
 			children = (
 				03CFD2EBCF8E5FC72B62887D /* HulunoteApp.swift */,
 				141A1EFCDFBD031E35C00297 /* Info.plist */,
+				4AB362040C42E6786253F706 /* Extensions */,
 				FCA0B0B9419890A2FAD37DB0 /* Models */,
 				10A4024AD73B898706076142 /* Network */,
 				A47281C2C18D7C506D1E4F44 /* OutlineTree */,
+				8A7231749BF65347D5C0709C /* Resources */,
 				991534AA5BCC06B8BD46D422 /* Services */,
 				4D12DF8C0B43C8009DF62540 /* Theme */,
 				D577E6C91722D154B00F5021 /* Utilities */,
@@ -239,6 +275,7 @@
 			buildConfigurationList = CB6684F7B40D0080CA1C6229 /* Build configuration list for PBXNativeTarget "Hulunote" */;
 			buildPhases = (
 				769EBF2C84062B260BCEB2E0 /* Sources */,
+				3076C62B85A83AB77AC7C8BF /* Resources */,
 			);
 			buildRules = (
 			);
@@ -284,6 +321,17 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		3076C62B85A83AB77AC7C8BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A0637105BD83FECF5AA4A67 /* knowed-word.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		769EBF2C84062B260BCEB2E0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -321,6 +369,9 @@
 				A153099157DC813EFBA00837 /* OutlineNode.swift in Sources */,
 				E0A643E4F8BE7857EDD4E619 /* OutlineTreeBuilder.swift in Sources */,
 				823CD2AFDE3C65A329212FD7 /* RootView.swift in Sources */,
+				0E7437715EFC33B5513AD66E /* UIApplication+Extensions.swift in Sources */,
+				F4CE09278C460BF3D2D8165C /* WordLearningView.swift in Sources */,
+				8C87A0EEABE28A67C498B02F /* WordLearningViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
