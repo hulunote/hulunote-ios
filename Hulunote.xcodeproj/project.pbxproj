@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,25 +30,25 @@
 		A203CC023C548F0D67D63FCE /* HulunoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CFD2EBCF8E5FC72B62887D /* HulunoteApp.swift */; };
 		A5B95EF662438572873D61FF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41489142B83D98633A4852EE /* Note.swift */; };
 		AA95F9E8E73D660C52BDF615 /* GradientStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5B398B54D44F188827C588 /* GradientStyles.swift */; };
+		AAAA999988887777AAAA9999 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB888877776666BBBB8888 /* SpeechService.swift */; };
 		AED762E6683D165211855025 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB451BD1AD9610CE3CEF749 /* Color+Hex.swift */; };
+		BLINK0001BLINK0001BLINK /* BiDirectionalLinkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BLINK0002BLINK0002BLINK /* BiDirectionalLinkParser.swift */; };
+		BLINK0003BLINK0003BLINK /* BacklinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BLINK0004BLINK0004BLINK /* BacklinksView.swift */; };
+		BLINK0005BLINK0005BLINK /* BacklinksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BLINK0006BLINK0006BLINK /* BacklinksViewModel.swift */; };
 		C0B202D7D8ECB3327A5E108E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9BDEF20EEF170F0C7E293C /* Database.swift */; };
 		C1975B05F7EABAF7F8C7D43D /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AFD1BCB4E401DED1271DCD /* NoteService.swift */; };
 		C9B38C746CDEBB9D333DB191 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13835C587DF22578FCD007E1 /* APIClient.swift */; };
 		CD833C68EDAA945CAEE88E9A /* DatabaseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1C209A9D837CF922A0B5EF /* DatabaseCardView.swift */; };
 		DA3DB86D9E099BB0B0CC833F /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC261308168E85CDB6D5006C /* DatabaseService.swift */; };
 		DCB2036324444FF131E80BDB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E0D258D06B3ED4E59A836 /* LoginViewModel.swift */; };
+		DDDD444455556666DDDD4444 /* R2D2ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA111122223333AAAA1111 /* R2D2ChatViewModel.swift */; };
 		E0A643E4F8BE7857EDD4E619 /* OutlineTreeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA43C70C80BD3E6423853DC /* OutlineTreeBuilder.swift */; };
 		E84295AB84DDE85812D1256F /* CreateNoteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07176D7A2FF10754E2A5A7A5 /* CreateNoteSheet.swift */; };
 		EAFDECCED017CD50E303471E /* DatabaseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E882D12EC826E9F0AACA59 /* DatabaseListViewModel.swift */; };
+		EEEE555566667777EEEE5555 /* R2D2ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB222233334444BBBB2222 /* R2D2ChatView.swift */; };
 		F4CE09278C460BF3D2D8165C /* WordLearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACFF45D4083338BE4E1CD4A /* WordLearningView.swift */; };
 		F7F233F7D6CEBF87E8C2DBE3 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413392ACFB336FF2CC9BDDAD /* KeychainService.swift */; };
-		DDDD444455556666DDDD4444 /* R2D2ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA111122223333AAAA1111 /* R2D2ChatViewModel.swift */; };
-		EEEE555566667777EEEE5555 /* R2D2ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB222233334444BBBB2222 /* R2D2ChatView.swift */; };
 		FFFF666677778888FFFF6666 /* R2D2MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC333344445555CCCC3333 /* R2D2MessageBubble.swift */; };
-		AAAA999988887777AAAA9999 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB888877776666BBBB8888 /* SpeechService.swift */; };
-		BLINK0001BLINK0001BLINK /* BiDirectionalLinkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BLINK0002BLINK0002BLINK /* BiDirectionalLinkParser.swift */; };
-		BLINK0003BLINK0003BLINK /* BacklinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BLINK0004BLINK0004BLINK /* BacklinksView.swift */; };
-		BLINK0005BLINK0005BLINK /* BacklinksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BLINK0006BLINK0006BLINK /* BacklinksViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,7 +76,7 @@
 		68E1FACCD850E0C1574AC024 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		6ACFF45D4083338BE4E1CD4A /* WordLearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLearningView.swift; sourceTree = "<group>"; };
 		6CA43C70C80BD3E6423853DC /* OutlineTreeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineTreeBuilder.swift; sourceTree = "<group>"; };
-		6E832E3F966E9D4E8C281A05 /* Hulunote.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Hulunote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E832E3F966E9D4E8C281A05 /* Hulunote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hulunote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BD19D002DE6FEE6930A1DC /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
 		7A9BDEF20EEF170F0C7E293C /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		7E4086D0D80B736AA2A0EA47 /* OutlineBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineBlockView.swift; sourceTree = "<group>"; };
@@ -85,17 +85,17 @@
 		8CCE6C40F680DFD2D19D74DF /* DatabaseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseListView.swift; sourceTree = "<group>"; };
 		A7CDAB9281EB061E81541066 /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardView.swift; sourceTree = "<group>"; };
 		A80A1EA45807ABAB6FC6E335 /* HulunoteColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HulunoteColors.swift; sourceTree = "<group>"; };
-		BBD5A95A8C2A5BE1BAC67EBD /* HulunoteTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HulunoteTypography.swift; sourceTree = "<group>"; };
-		C5A8E03FFEC039E21012BC69 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		CC261308168E85CDB6D5006C /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
-		FD26AD834F2A9A0DDD3A1D20 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		AAAA111122223333AAAA1111 /* R2D2ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2D2ChatViewModel.swift; sourceTree = "<group>"; };
 		BBBB222233334444BBBB2222 /* R2D2ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2D2ChatView.swift; sourceTree = "<group>"; };
-		CCCC333344445555CCCC3333 /* R2D2MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2D2MessageBubble.swift; sourceTree = "<group>"; };
 		BBBB888877776666BBBB8888 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
+		BBD5A95A8C2A5BE1BAC67EBD /* HulunoteTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HulunoteTypography.swift; sourceTree = "<group>"; };
 		BLINK0002BLINK0002BLINK /* BiDirectionalLinkParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiDirectionalLinkParser.swift; sourceTree = "<group>"; };
 		BLINK0004BLINK0004BLINK /* BacklinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacklinksView.swift; sourceTree = "<group>"; };
 		BLINK0006BLINK0006BLINK /* BacklinksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacklinksViewModel.swift; sourceTree = "<group>"; };
+		C5A8E03FFEC039E21012BC69 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CC261308168E85CDB6D5006C /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		CCCC333344445555CCCC3333 /* R2D2MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2D2MessageBubble.swift; sourceTree = "<group>"; };
+		FD26AD834F2A9A0DDD3A1D20 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -105,6 +105,15 @@
 				13835C587DF22578FCD007E1 /* APIClient.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		1111AAAA2222BBBB3333CCCC /* R2D2 */ = {
+			isa = PBXGroup;
+			children = (
+				BBBB222233334444BBBB2222 /* R2D2ChatView.swift */,
+				CCCC333344445555CCCC3333 /* R2D2MessageBubble.swift */,
+			);
+			path = R2D2;
 			sourceTree = "<group>";
 		};
 		1C87688AF9CEC7659A142582 /* Login */ = {
@@ -216,15 +225,6 @@
 			path = WordLearning;
 			sourceTree = "<group>";
 		};
-		1111AAAA2222BBBB3333CCCC /* R2D2 */ = {
-			isa = PBXGroup;
-			children = (
-				BBBB222233334444BBBB2222 /* R2D2ChatView.swift */,
-				CCCC333344445555CCCC3333 /* R2D2MessageBubble.swift */,
-			);
-			path = R2D2;
-			sourceTree = "<group>";
-		};
 		991534AA5BCC06B8BD46D422 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,11 +313,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1500;
-				TargetAttributes = {
-					BDD0AEBBCE13BAC52CB7FC52 = {
-						DevelopmentTeam = "";
-					};
-				};
 			};
 			buildConfigurationList = 6DED7FD557BB2AE3DAEB70ED /* Build configuration list for PBXProject "Hulunote" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -329,7 +324,6 @@
 			);
 			mainGroup = 4885767E0118169A66742628;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -519,10 +513,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				CODE_SIGN_IDENTITY = "";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F274HZAT89;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hulunote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -531,6 +526,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hulunote.ios;
 				PRODUCT_NAME = Hulunote;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = NO;
@@ -543,10 +539,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				CODE_SIGN_IDENTITY = "";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F274HZAT89;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hulunote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -555,6 +552,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hulunote.ios;
 				PRODUCT_NAME = Hulunote;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = NO;
