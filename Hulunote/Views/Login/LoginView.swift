@@ -11,21 +11,19 @@ struct LoginView: View {
             ScrollView {
                 VStack(spacing: 0) {
                     // Gradient header
-                    ZStack {
-                        LinearGradient.hulunotePurple
-                            .frame(height: 200)
-                            .clipShape(RoundedRectangle(cornerRadius: 0))
+                    VStack(spacing: 8) {
+                        Text("Hulunote")
+                            .font(.system(size: 36, weight: .bold))
+                            .foregroundColor(.white)
 
-                        VStack(spacing: 8) {
-                            Text("Hulunote")
-                                .font(.system(size: 36, weight: .bold))
-                                .foregroundColor(.white)
-
-                            Text("Outline your thoughts")
-                                .font(HulunoteFont.body)
-                                .foregroundColor(.white.opacity(0.8))
-                        }
+                        Text("Outline your thoughts")
+                            .font(HulunoteFont.body)
+                            .foregroundColor(.white.opacity(0.8))
                     }
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 60)
+                    .padding(.bottom, 40)
+                    .background(LinearGradient.hulunotePurple)
 
                     // Login form card
                     VStack(spacing: 20) {
@@ -102,7 +100,7 @@ struct LoginView: View {
                     .background(Color.hulunoteCard)
                     .cornerRadius(16)
                     .padding(.horizontal, 24)
-                    .offset(y: -40)
+                    .padding(.top, 24)
                 }
             }
         }
