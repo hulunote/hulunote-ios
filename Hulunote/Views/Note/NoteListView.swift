@@ -70,6 +70,13 @@ struct NoteListView: View {
                                             noteTitle: note.title,
                                             rootNavId: note.rootNavId
                                         ))
+                                    },
+                                    onTTS: {
+                                        path.append(TTSRoute(
+                                            noteId: note.id,
+                                            noteTitle: note.title,
+                                            rootNavId: note.rootNavId
+                                        ))
                                     }
                                 )
                             }

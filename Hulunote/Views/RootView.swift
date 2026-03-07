@@ -40,6 +40,12 @@ struct R2D2Route: Hashable {
     let rootNavId: String?
 }
 
+struct TTSRoute: Hashable {
+    let noteId: String
+    let noteTitle: String
+    let rootNavId: String?
+}
+
 // MARK: - Main Navigation
 
 struct MainNavigationView: View {
@@ -73,6 +79,13 @@ struct MainNavigationView: View {
                 }
                 .navigationDestination(for: R2D2Route.self) { route in
                     R2D2ChatView(
+                        noteId: route.noteId,
+                        noteTitle: route.noteTitle,
+                        rootNavId: route.rootNavId
+                    )
+                }
+                .navigationDestination(for: TTSRoute.self) { route in
+                    NoteTTSView(
                         noteId: route.noteId,
                         noteTitle: route.noteTitle,
                         rootNavId: route.rootNavId
