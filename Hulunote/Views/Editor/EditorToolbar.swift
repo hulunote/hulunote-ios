@@ -6,6 +6,8 @@ struct EditorKeyboardToolbar: View {
     let onAddBlock: () -> Void
     let onDeleteBlock: () -> Void
     var onInsertLink: (() -> Void)? = nil
+    var onOCRFromLibrary: (() -> Void)? = nil
+    var onOCRFromCamera: (() -> Void)? = nil
 
     var body: some View {
         HStack(spacing: 16) {
@@ -44,6 +46,25 @@ struct EditorKeyboardToolbar: View {
             } label: {
                 Text("[]")
                     .font(.system(size: 14, weight: .semibold, design: .monospaced))
+                    .foregroundColor(.hulunoteAccent)
+            }
+
+            Divider()
+                .frame(height: 20)
+
+            Button {
+                onOCRFromLibrary?()
+            } label: {
+                Image(systemName: "photo")
+                    .font(.system(size: 16))
+                    .foregroundColor(.hulunoteAccent)
+            }
+
+            Button {
+                onOCRFromCamera?()
+            } label: {
+                Image(systemName: "camera")
+                    .font(.system(size: 16))
                     .foregroundColor(.hulunoteAccent)
             }
 

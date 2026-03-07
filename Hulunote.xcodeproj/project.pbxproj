@@ -50,6 +50,8 @@
 		F7F233F7D6CEBF87E8C2DBE3 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413392ACFB336FF2CC9BDDAD /* KeychainService.swift */; };
 		FFFF666677778888FFFF6666 /* R2D2MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC333344445555CCCC3333 /* R2D2MessageBubble.swift */; };
 		ASSET002ASSET002ASSET02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ASSET001ASSET001ASSET01 /* Assets.xcassets */; };
+		OCR00001OCR00001OCR001 /* OCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OCR00002OCR00002OCR002 /* OCRService.swift */; };
+		OCR00003OCR00003OCR003 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = OCR00004OCR00004OCR004 /* ImagePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +100,8 @@
 		CCCC333344445555CCCC3333 /* R2D2MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2D2MessageBubble.swift; sourceTree = "<group>"; };
 		FD26AD834F2A9A0DDD3A1D20 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		ASSET001ASSET001ASSET01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		OCR00002OCR00002OCR002 /* OCRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRService.swift; sourceTree = "<group>"; };
+		OCR00004OCR00004OCR004 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -205,6 +209,7 @@
 			children = (
 				BLINK0004BLINK0004BLINK /* BacklinksView.swift */,
 				1C747756AB793525E0E9FD42 /* EditorToolbar.swift */,
+				OCR00004OCR00004OCR004 /* ImagePickerView.swift */,
 				7E4086D0D80B736AA2A0EA47 /* OutlineBlockView.swift */,
 				56835BF34400FD58FB384EF5 /* OutlineEditorView.swift */,
 			);
@@ -235,6 +240,7 @@
 				413392ACFB336FF2CC9BDDAD /* KeychainService.swift */,
 				8745AA875A94D8921638E42C /* NavService.swift */,
 				23AFD1BCB4E401DED1271DCD /* NoteService.swift */,
+				OCR00002OCR00002OCR002 /* OCRService.swift */,
 				BBBB888877776666BBBB8888 /* SpeechService.swift */,
 			);
 			path = Services;
@@ -381,6 +387,8 @@
 				63CBCEA67404EBF1C3F63BE5 /* NoteListView.swift in Sources */,
 				2CC6716218F82CCFB91B0B02 /* NoteListViewModel.swift in Sources */,
 				C1975B05F7EABAF7F8C7D43D /* NoteService.swift in Sources */,
+				OCR00001OCR00001OCR001 /* OCRService.swift in Sources */,
+				OCR00003OCR00003OCR003 /* ImagePickerView.swift in Sources */,
 				80E753039814AE4B59BBFF15 /* OutlineBlockView.swift in Sources */,
 				2A5AA2C237D853A5FCDD7C85 /* OutlineEditorView.swift in Sources */,
 				87963757B11FE9CF8980267D /* OutlineEditorViewModel.swift in Sources */,

@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 struct OutlineEditorView: View {
     @Environment(AppViewModel.self) private var appViewModel
@@ -11,6 +12,9 @@ struct OutlineEditorView: View {
     @State private var viewModel: OutlineEditorViewModel?
     @State private var selectedNodeId: String?
     @State private var backlinksViewModel: BacklinksViewModel?
+    @State private var showImagePicker = false
+    @State private var imagePickerSource: UIImagePickerController.SourceType = .photoLibrary
+    @State private var isOCRProcessing = false
 
     var body: some View {
         ZStack {
@@ -141,6 +145,14 @@ struct OutlineEditorView: View {
                                     Task { await vm.deleteBlock(navId: id) }
                                     selectedNodeId = nil
                                 }
+                            },
+                            onOCRFromLibrary: {
+                                imagePickerSource = .photoLibrary
+                                showImagePicker = true
+                            },
+                            onOCRFromCamera: {
+                                imagePickerSource = .camera
+                                showImagePicker = true
                             }
                         )
                     }
@@ -181,6 +193,29 @@ struct OutlineEditorView: View {
                 }
             }
         }
+        .sheet(isPresented: $showImagePicker) {
+            ImagePickerView(sourceType: imagePickerSource) { image in
+                handleOCRImage(image)
+            }
+        }
+        .overlay {
+            if isOCRProcessing {
+                ZStack {
+                    Color.black.opacity(0.4).ignoresSafeArea()
+                    VStack(spacing: 12) {
+                        ProgressView()
+                            .tint(.white)
+                            .scaleEffect(1.2)
+                        Text("Recognizing text...")
+                            .font(HulunoteFont.small)
+                            .foregroundColor(.white)
+                    }
+                    .padding(24)
+                    .background(Color.black.opacity(0.7))
+                    .cornerRadius(12)
+                }
+            }
+        }
         .onAppear {
             if viewModel == nil {
                 viewModel = OutlineEditorViewModel(
@@ -202,6 +237,31 @@ struct OutlineEditorView: View {
         .task {
             await viewModel?.loadNavs()
             await backlinksViewModel?.loadBacklinks()
+        }
+    }
+
+    private func handleOCRImage(_ image: UIImage) {
+        guard let vm = viewModel else { return }
+        isOCRProcessing = true
+        Task {
+            let recognizedText = await OCRService.recognizeText(from: image)
+            await MainActor.run {
+                isOCRProcessing = false
+            }
+            guard !recognizedText.isEmpty else { return }
+
+            // Split recognized text into lines and create blocks
+            let lines = recognizedText.components(separatedBy: "\n").filter { !$0.trimmingCharacters(in: .whitespaces).isEmpty }
+            for line in lines {
+                if let lastNode = vm.displayList.last {
+                    await vm.createNewBlock(afterNodeId: lastNode.id)
+                } else {
+                    await vm.createFirstBlock()
+                }
+                if let newNodeId = vm.focusNodeId {
+                    vm.onContentChange(navId: newNodeId, content: line)
+                }
+            }
         }
     }
 

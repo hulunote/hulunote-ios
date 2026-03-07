@@ -25,8 +25,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Hulunote needs camera access to take photos for OCR text recognition.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Hulunote needs microphone access for voice input in R2D2 chat.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Hulunote needs photo library access to select images for OCR text recognition.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Hulunote uses speech recognition to convert your voice to text notes.</string>
 	<key>UILaunchScreen</key>
