@@ -15,6 +15,8 @@ struct OutlineEditorView: View {
     @State private var showImagePicker = false
     @State private var imagePickerSource: UIImagePickerController.SourceType = .photoLibrary
     @State private var isOCRProcessing = false
+    @State private var showOCRPreview = false
+    @State private var ocrLines: [String] = []
 
     var body: some View {
         ZStack {
@@ -198,6 +200,11 @@ struct OutlineEditorView: View {
                 handleOCRImage(image)
             }
         }
+        .sheet(isPresented: $showOCRPreview) {
+            OCRPreviewSheet(lines: $ocrLines) { confirmedLines in
+                importOCRLines(confirmedLines)
+            }
+        }
         .overlay {
             if isOCRProcessing {
                 ZStack {
@@ -241,17 +248,24 @@ struct OutlineEditorView: View {
     }
 
     private func handleOCRImage(_ image: UIImage) {
-        guard let vm = viewModel else { return }
         isOCRProcessing = true
         Task {
             let recognizedText = await OCRService.recognizeText(from: image)
             await MainActor.run {
                 isOCRProcessing = false
+                guard !recognizedText.isEmpty else { return }
+                ocrLines = recognizedText.components(separatedBy: "\n")
+                    .filter { !$0.trimmingCharacters(in: .whitespaces).isEmpty }
+                if !ocrLines.isEmpty {
+                    showOCRPreview = true
+                }
             }
-            guard !recognizedText.isEmpty else { return }
+        }
+    }
 
-            // Split recognized text into lines and create blocks
-            let lines = recognizedText.components(separatedBy: "\n").filter { !$0.trimmingCharacters(in: .whitespaces).isEmpty }
+    private func importOCRLines(_ lines: [String]) {
+        guard let vm = viewModel else { return }
+        Task {
             for line in lines {
                 if let lastNode = vm.displayList.last {
                     await vm.createNewBlock(afterNodeId: lastNode.id)
