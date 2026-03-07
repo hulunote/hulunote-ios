@@ -179,6 +179,12 @@ struct OutlineEditorView: View {
                             Label("Copy as Markdown", systemImage: "doc.on.doc")
                         }
 
+                        Button {
+                            vm.copyAsChatGPT()
+                        } label: {
+                            Label("Copy as ChatGPT", systemImage: "bubble.left.and.text.bubble.right")
+                        }
+
                         if let id = selectedNodeId {
                             Divider()
 

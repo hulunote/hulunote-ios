@@ -327,10 +327,9 @@ final class OutlineEditorViewModel {
         focusNodeId = nil
     }
 
-    // MARK: - Copy as Markdown
+    // MARK: - Export
 
-    func copyAsMarkdown() {
-        // Build full tree (ignore collapsed state) for complete export
+    func generateMarkdown() -> String {
         let allNodes = OutlineTreeBuilder.buildDisplayList(
             navList: navList,
             rootNavId: rootNavId,
@@ -342,7 +341,16 @@ final class OutlineEditorViewModel {
             let indent = String(repeating: "  ", count: node.depth)
             lines.append("\(indent)- \(node.content)")
         }
+        return lines.joined(separator: "\n")
+    }
 
-        UIPasteboard.general.string = lines.joined(separator: "\n")
+    func copyAsMarkdown() {
+        UIPasteboard.general.string = generateMarkdown()
+    }
+
+    func copyAsChatGPT() {
+        let markdown = generateMarkdown()
+        let prompt = "Please convert the following Markdown content into ChatGPT's English conversation training:\n\(markdown)"
+        UIPasteboard.general.string = prompt
     }
 }
