@@ -17,6 +17,7 @@ struct OutlineEditorView: View {
     @State private var isOCRProcessing = false
     @State private var showOCRPreview = false
     @State private var ocrLines: [String] = []
+    @State private var showMarkdownImport = false
 
     var body: some View {
         ZStack {
@@ -174,6 +175,12 @@ struct OutlineEditorView: View {
                         }
 
                         Button {
+                            showMarkdownImport = true
+                        } label: {
+                            Label("Import Markdown", systemImage: "square.and.arrow.down")
+                        }
+
+                        Button {
                             vm.copyAsMarkdown()
                         } label: {
                             Label("Copy as Markdown", systemImage: "doc.on.doc")
@@ -205,6 +212,12 @@ struct OutlineEditorView: View {
                     Image(systemName: "ellipsis.circle")
                         .foregroundColor(.hulunoteAccent)
                 }
+            }
+        }
+        .sheet(isPresented: $showMarkdownImport) {
+            MarkdownImportSheet { markdownText in
+                guard let vm = viewModel else { return }
+                Task { await vm.importMarkdown(text: markdownText) }
             }
         }
         .sheet(isPresented: $showImagePicker) {

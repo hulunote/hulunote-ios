@@ -353,4 +353,83 @@ final class OutlineEditorViewModel {
         let prompt = "Please convert the following Markdown content into ChatGPT's English conversation training:\n\(markdown)"
         UIPasteboard.general.string = prompt
     }
+
+    // MARK: - Import Markdown
+
+    @MainActor
+    func importMarkdown(text: String) async {
+        guard let rootId = rootNavId else { return }
+
+        let lines = text.components(separatedBy: "\n")
+        var parsedLines: [(depth: Int, content: String)] = []
+
+        for line in lines {
+            let trimmed = line.trimmingCharacters(in: .whitespaces)
+            if trimmed.isEmpty { continue }
+
+            // Heading: # ## ### etc.
+            if trimmed.hasPrefix("#") {
+                let hashCount = trimmed.prefix(while: { $0 == "#" }).count
+                let content = String(trimmed.dropFirst(hashCount)).trimmingCharacters(in: .whitespaces)
+                if !content.isEmpty {
+                    parsedLines.append((depth: max(0, hashCount - 1), content: content))
+                }
+                continue
+            }
+
+            // List item: "  - content" or "  * content"
+            let leadingSpaces = line.prefix(while: { $0 == " " }).count
+            if trimmed.hasPrefix("- ") {
+                parsedLines.append((depth: leadingSpaces / 2, content: String(trimmed.dropFirst(2))))
+                continue
+            }
+            if trimmed.hasPrefix("* ") {
+                parsedLines.append((depth: leadingSpaces / 2, content: String(trimmed.dropFirst(2))))
+                continue
+            }
+
+            // Plain text
+            parsedLines.append((depth: 0, content: trimmed))
+        }
+
+        guard !parsedLines.isEmpty else { return }
+
+        // Track parent ID at each depth level
+        var parentAtDepth: [Int: String] = [0: rootId]
+        var orderAtParent: [String: Float] = [:]
+
+        // Start after existing top-level blocks
+        let existingTopLevel = navList.filter { $0.parid == rootId && $0.isDelete != true }
+        let maxOrder = existingTopLevel.map { $0.sameDeepOrder ?? 0 }.max() ?? 0
+        orderAtParent[rootId] = maxOrder
+
+        for (depth, content) in parsedLines {
+            let parid = parentAtDepth[depth] ?? rootId
+            let currentOrder = (orderAtParent[parid] ?? 0) + 100
+            orderAtParent[parid] = currentOrder
+
+            do {
+                let response = try await navService.createNav(
+                    noteId: noteId,
+                    parid: parid,
+                    content: content,
+                    order: currentOrder
+                )
+                if let nav = response.nav {
+                    navList.append(nav)
+                    // This block becomes potential parent for deeper blocks
+                    parentAtDepth[depth + 1] = nav.id
+                    // Clear deeper parent references
+                    for d in (depth + 2)...10 {
+                        parentAtDepth.removeValue(forKey: d)
+                    }
+                }
+            } catch {
+                self.error = error.localizedDescription
+                break
+            }
+        }
+
+        rebuildDisplayList()
+    }
 }

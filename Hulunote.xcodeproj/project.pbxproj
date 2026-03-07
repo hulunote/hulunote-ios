@@ -52,6 +52,7 @@
 		ASSET002ASSET002ASSET02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ASSET001ASSET001ASSET01 /* Assets.xcassets */; };
 		OCR00001OCR00001OCR001 /* OCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OCR00002OCR00002OCR002 /* OCRService.swift */; };
 		OCR00003OCR00003OCR003 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = OCR00004OCR00004OCR004 /* ImagePickerView.swift */; };
+		MDIM0001MDIM0001MDIM01 /* MarkdownImportSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = MDIM0002MDIM0002MDIM02 /* MarkdownImportSheet.swift */; };
 		OCR00005OCR00005OCR005 /* OCRPreviewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = OCR00006OCR00006OCR006 /* OCRPreviewSheet.swift */; };
 		TTS00001TTS00001TTS001 /* NoteTTSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = TTS00002TTS00002TTS002 /* NoteTTSViewModel.swift */; };
 		TTS00003TTS00003TTS003 /* NoteTTSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = TTS00004TTS00004TTS004 /* NoteTTSView.swift */; };
@@ -105,6 +106,7 @@
 		ASSET001ASSET001ASSET01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		OCR00002OCR00002OCR002 /* OCRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRService.swift; sourceTree = "<group>"; };
 		OCR00004OCR00004OCR004 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		MDIM0002MDIM0002MDIM02 /* MarkdownImportSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownImportSheet.swift; sourceTree = "<group>"; };
 		OCR00006OCR00006OCR006 /* OCRPreviewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRPreviewSheet.swift; sourceTree = "<group>"; };
 		TTS00002TTS00002TTS002 /* NoteTTSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTTSViewModel.swift; sourceTree = "<group>"; };
 		TTS00004TTS00004TTS004 /* NoteTTSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTTSView.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				BLINK0004BLINK0004BLINK /* BacklinksView.swift */,
 				1C747756AB793525E0E9FD42 /* EditorToolbar.swift */,
 				OCR00004OCR00004OCR004 /* ImagePickerView.swift */,
+				MDIM0002MDIM0002MDIM02 /* MarkdownImportSheet.swift */,
 				OCR00006OCR00006OCR006 /* OCRPreviewSheet.swift */,
 				7E4086D0D80B736AA2A0EA47 /* OutlineBlockView.swift */,
 				56835BF34400FD58FB384EF5 /* OutlineEditorView.swift */,
@@ -400,6 +403,7 @@
 				C1975B05F7EABAF7F8C7D43D /* NoteService.swift in Sources */,
 				OCR00001OCR00001OCR001 /* OCRService.swift in Sources */,
 				OCR00003OCR00003OCR003 /* ImagePickerView.swift in Sources */,
+				MDIM0001MDIM0001MDIM01 /* MarkdownImportSheet.swift in Sources */,
 				OCR00005OCR00005OCR005 /* OCRPreviewSheet.swift in Sources */,
 				80E753039814AE4B59BBFF15 /* OutlineBlockView.swift in Sources */,
 				2A5AA2C237D853A5FCDD7C85 /* OutlineEditorView.swift in Sources */,
