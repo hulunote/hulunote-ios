@@ -152,11 +152,16 @@ final class NoteTTSViewModel {
     }
 
     private func selectVoice(for text: String) -> AVSpeechSynthesisVoice? {
-        if let voice = AVSpeechSynthesisVoice(identifier: "com.apple.voice.enhanced.en-US.Samantha") {
-            return voice
+        let enVoices = AVSpeechSynthesisVoice.speechVoices()
+            .filter { $0.language.hasPrefix("en") }
+
+        // Prefer premium quality first
+        if let premium = enVoices.first(where: { $0.quality == .premium }) {
+            return premium
         }
-        if let voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle.Samantha-compact") {
-            return voice
+        // Then enhanced
+        if let enhanced = enVoices.first(where: { $0.quality == .enhanced }) {
+            return enhanced
         }
         return AVSpeechSynthesisVoice(language: "en-US")
     }
