@@ -173,6 +173,12 @@ struct OutlineEditorView: View {
                             Label("Refresh", systemImage: "arrow.clockwise")
                         }
 
+                        Button {
+                            vm.copyAsMarkdown()
+                        } label: {
+                            Label("Copy as Markdown", systemImage: "doc.on.doc")
+                        }
+
                         if let id = selectedNodeId {
                             Divider()
 

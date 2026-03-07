@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 @Observable
 final class OutlineEditorViewModel {
@@ -324,5 +325,24 @@ final class OutlineEditorViewModel {
 
     func clearFocusRequest() {
         focusNodeId = nil
+    }
+
+    // MARK: - Copy as Markdown
+
+    func copyAsMarkdown() {
+        // Build full tree (ignore collapsed state) for complete export
+        let allNodes = OutlineTreeBuilder.buildDisplayList(
+            navList: navList,
+            rootNavId: rootNavId,
+            collapsedIds: []
+        )
+
+        var lines: [String] = ["# \(noteTitle)", ""]
+        for node in allNodes {
+            let indent = String(repeating: "  ", count: node.depth)
+            lines.append("\(indent)- \(node.content)")
+        }
+
+        UIPasteboard.general.string = lines.joined(separator: "\n")
     }
 }
