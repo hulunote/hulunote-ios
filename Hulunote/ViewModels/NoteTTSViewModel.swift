@@ -59,7 +59,7 @@ final class NoteTTSViewModel {
             )
 
             self.paragraphs = allNodes
-                .map { $0.content.trimmingCharacters(in: .whitespacesAndNewlines) }
+                .map { Self.cleanToEnglish($0.content) }
                 .filter { !$0.isEmpty }
         } catch {
             self.error = error.localizedDescription
@@ -152,23 +152,29 @@ final class NoteTTSViewModel {
     }
 
     private func selectVoice(for text: String) -> AVSpeechSynthesisVoice? {
-        let chineseCount = text.unicodeScalars.filter { $0.value >= 0x4E00 && $0.value <= 0x9FFF }.count
-        let isChinese = chineseCount > text.count / 3
-
-        if isChinese {
-            if let voice = AVSpeechSynthesisVoice(identifier: "com.apple.voice.enhanced.zh-CN.Tingting") {
-                return voice
-            }
-            return AVSpeechSynthesisVoice(language: "zh-CN")
-        } else {
-            if let voice = AVSpeechSynthesisVoice(identifier: "com.apple.voice.enhanced.en-US.Samantha") {
-                return voice
-            }
-            if let voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle.Samantha-compact") {
-                return voice
-            }
-            return AVSpeechSynthesisVoice(language: "en-US")
+        if let voice = AVSpeechSynthesisVoice(identifier: "com.apple.voice.enhanced.en-US.Samantha") {
+            return voice
         }
+        if let voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle.Samantha-compact") {
+            return voice
+        }
+        return AVSpeechSynthesisVoice(language: "en-US")
+    }
+
+    private static func cleanToEnglish(_ text: String) -> String {
+        // Only keep English letters, digits, spaces, and basic sentence punctuation
+        let cleaned = text.unicodeScalars.map { scalar -> Character in
+            let v = scalar.value
+            if (v >= 0x41 && v <= 0x5A) || (v >= 0x61 && v <= 0x7A) { return Character(scalar) } // A-Z a-z
+            if v >= 0x30 && v <= 0x39 { return Character(scalar) } // 0-9
+            if scalar == " " || scalar == "'" { return Character(scalar) } // space, apostrophe
+            return " "
+        }
+        // Collapse multiple spaces and trim
+        return String(cleaned)
+            .components(separatedBy: .whitespaces)
+            .filter { !$0.isEmpty }
+            .joined(separator: " ")
     }
 
     deinit {
