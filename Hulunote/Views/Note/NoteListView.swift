@@ -103,6 +103,14 @@ struct NoteListView: View {
             ToolbarItem(placement: .topBarTrailing) {
                 HStack(spacing: 16) {
                     Button {
+                        path.append(BookkeepingRoute(
+                            databaseId: databaseId
+                        ))
+                    } label: {
+                        Image(systemName: "yensign.circle")
+                            .foregroundColor(.hulunoteAccent)
+                    }
+                    Button {
                         path.append(WordLearningRoute(
                             databaseId: databaseId,
                             databaseName: databaseName

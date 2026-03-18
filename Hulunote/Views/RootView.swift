@@ -46,6 +46,10 @@ struct TTSRoute: Hashable {
     let rootNavId: String?
 }
 
+struct BookkeepingRoute: Hashable {
+    let databaseId: String
+}
+
 // MARK: - Main Navigation
 
 struct MainNavigationView: View {
@@ -89,6 +93,11 @@ struct MainNavigationView: View {
                         noteId: route.noteId,
                         noteTitle: route.noteTitle,
                         rootNavId: route.rootNavId
+                    )
+                }
+                .navigationDestination(for: BookkeepingRoute.self) { route in
+                    BookkeepingView(
+                        databaseId: route.databaseId
                     )
                 }
         }
